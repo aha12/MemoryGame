@@ -32,7 +32,7 @@ function displayCard () {
     };
     
 
-/*window.onload = startGame();
+window.onload = startGame();
 
 let deck = document.getElementbyId('card-deck');
 
