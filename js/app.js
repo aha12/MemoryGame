@@ -17,7 +17,7 @@ function displayCard () {
 
 
 
-  /* function shuffle(array) {
+  function shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
     
         while (currentIndex !== 0) {
@@ -31,7 +31,8 @@ function displayCard () {
         return array;
     };
     
-window.onload = startGame();
+
+/*window.onload = startGame();
 
 let deck = document.getElementbyId('card-deck');
 
