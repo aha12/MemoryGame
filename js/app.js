@@ -12,7 +12,7 @@ function displayCard () {
     this.classList.toggle('open');
     this.classList.toggle('show');
     this.classList.toggle('disable');
-}
+};
 
  
 
