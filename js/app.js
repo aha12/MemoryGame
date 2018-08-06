@@ -2,6 +2,8 @@ let card = document.getElementsByClassName('card');
 
 let cards = [...card];
 
+let deck = document.getElementById('card-deck');
+
 for (let i = 0; i < cards.length; i++) {
 
     cards[i].addEventListener('click', displayCard);
@@ -17,36 +19,34 @@ function displayCard () {
 
 
 
-  function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
+function shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
     
-        while (currentIndex !== 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
         }
-    
         return array;
     };
+
+    document.body.onload = startGame();
     
-
-window.onload = startGame();
-
-let deck = document.getElementbyId('card-deck');
-
-function startGame () {
-    var shuffleCards = shuffle(cards);
-    for (var i = 0; i < shuffleCards.length; i++) {
-        [].forEach.call(shuffleCards, function(item) {
-            deck.appendChild(item);
-        });
-    }  
-}
+    function startGame(){
+        
+       let cardsShuffled = shuffle(cards);
+        
+        for (let i = 0; i < cardsShuffled.length; i++){
+            [].forEach.call(cardsShuffled, function(item) {
+                deck.appendChild(item);
+            });
+            
+        }
+    }
 
 
-    
 
 /* cards[i].classList.remove('show','open','match','disable');
     
