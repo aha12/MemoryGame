@@ -33,6 +33,8 @@ function shuffle(array) {
     };
 
     document.body.onload = startGame();
+
+    
     
     function startGame(){
         
@@ -47,8 +49,20 @@ function shuffle(array) {
     }
 
 
+function cardOpen () {
+    openedCards.push(this);
+    let opened = openedCards.length;
 
-/* cards[i].classList.remove('show','open','match','disable');
+    if(opened ===2) {
+        moveCounter();
+        if (openedCards[0].type === openedCards[1].type) {
+            matched();
+        } else {
+            unmatched();
+        }
+    }
+}
+
     
 
 /* 'fa fa-diamond', 'fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-paper-plane-o', 'fa fa-anchor', 'fa fa-anchor', 'fa fa-bolt', 'fa fa-bolt', 'fa fa-cube', 'fa fa-cube', 'fa fa-leaf', 'fa fa-leaf', 'fa fa-bicycle', 'fa fa-bicycle', 'fa fa-bomb', 'fa fa-bomb' */
