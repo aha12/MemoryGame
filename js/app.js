@@ -72,7 +72,7 @@ function cardOpen () {
          moveCounter();
     }
 }
-/*
+
 function matched() {
     openedCards[0].classList.add('match');
     openedCards[1].classList.add('match');
@@ -92,7 +92,7 @@ function unmatched() {
         openedCards = [];
     }, 1100);
 }
-
+/*
 function disable() {
     Array.prototype.filter.call(cards, function(card) {
         card.classList.add('disabled');
