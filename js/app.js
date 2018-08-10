@@ -191,7 +191,22 @@ function congrats () {
         document.getElementById('finalMove').innerHTML = moves;
         document.getElementById('starRating').innerHTML = starRating;
         document.getElementById('totalTime').innerHTML = finalTime;
+
+        closeModal();
     }
+}
+
+function closeModal () {
+    closeAlert.addEventListener('click', function(e) {
+        modal.classList.remove('show');
+        startGame();
+    })
+}
+
+function playAgain() {
+    modal.classList.remove('show');
+    startGame();
+
 }
 
 for (let i=0; i <cards.length; i++) {
