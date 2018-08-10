@@ -10,7 +10,7 @@ let openedCards = [];
 
 let moves = 0;
 
-let counter = document.getElementsByClassName('moves');
+let counter = document.querySelector('.moves');
 
 let stars = document.getElementsByClassName('fa-star');
 
@@ -54,22 +54,24 @@ function shuffle(array) {
             [].forEach.call(cardsShuffled, function(item) {
                 deck.appendChild(item);
             });
-            
+         cards[i].classList.remove('show', 'open', 'match', 'disabled');   
         }
+        moves = 0;
+        counter.innerHTML = moves;
     }
 
 
 function cardOpen () {
     openedCards.push(this);
     let opened = openedCards.length;
-
     if(opened === 2) {
+        moveCounter();
         if(openedCards[0].type === openedCards[1].type) {
             matched();
         } else {
             unmatched();
         }
-         moveCounter();
+         
     }
 }
 
@@ -107,16 +109,21 @@ function enable() {
         }
     });
 }
+
+function moveCounter() {
+    moves++;
+    counter.innerHTML = moves;
+}
+
+
+
+
 for (let i=0; i <cards.length; i++) {
 card = cards[i];
 card.addEventListener('click', displayCard);
 card.addEventListener('click', cardOpen);
 }
-/*
-function moveCounter() {
-    moves++;
-    moves = counter.innerHTML;
-
+    /*
     if(moves == 1) {
         second = 0;
         minute = 0;
