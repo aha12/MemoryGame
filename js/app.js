@@ -58,6 +58,12 @@ function shuffle(array) {
         }
         moves = 0;
         counter.innerHTML = moves;
+
+        //resetting star rating
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].style.color = '#FFD700';
+            stars[i].style.visibility = 'visible';
+        }
     }
 
 
@@ -113,41 +119,31 @@ function enable() {
 function moveCounter() {
     moves++;
     counter.innerHTML = moves;
-}
+    //start timer on first click
+    
 
-
-
-
-for (let i=0; i <cards.length; i++) {
-card = cards[i];
-card.addEventListener('click', displayCard);
-card.addEventListener('click', cardOpen);
-}
-    /*
-    if(moves == 1) {
-        second = 0;
-        minute = 0;
-        hour = 0;
-        startTimer();
-    }
+    // setting rating based on number of moves
 
     if (moves > 8 && moves < 12) {
-        for(i=0; i<3; i++) {
-            if(i>1) {
-                starts[i].style.visibility = 'collapse';
+        for(i = 0; i < 3; i++) {
+            if(i > 1) {
+                stars[i].style.visibility = 'collapse';
             }
         }
     }
 
     else if (moves > 13) {
-        for(i=0; i<3; i++) {
-            if(i>0) {
-                starts[i].style.visibility = 'collapse';
+        for(i = 0; i < 3; i++) {
+            if(i > 0) {
+                stars[i].style.visibility = 'collapse';
             }
         }
     }
 }
 
+
+
+/*
 let second = 0; minute = 0; hour = 0;
 let timer = document.getElementsByClassName('timer');
 var interval;
@@ -166,6 +162,17 @@ function startTimer() {
     }, 1000);
 }
 
+if(moves == 1) {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        startTimer();
+    */ 
 
+for (let i=0; i <cards.length; i++) {
+card = cards[i];
+card.addEventListener('click', displayCard);
+card.addEventListener('click', cardOpen);
+}
 
 /* 'fa fa-diamond', 'fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-paper-plane-o', 'fa fa-anchor', 'fa fa-anchor', 'fa fa-bolt', 'fa fa-bolt', 'fa fa-cube', 'fa fa-cube', 'fa fa-leaf', 'fa fa-leaf', 'fa fa-bicycle', 'fa fa-bicycle', 'fa fa-bomb', 'fa fa-bomb' */
