@@ -76,6 +76,12 @@ function shuffle(array) {
         }
 
         //resetting timer
+        second = 0;
+        minute = 0;
+        hour = 0;
+        let timer = document.querySelector('.timer');
+        timer.innerHTML = '0 mins 0 secs';
+        clearInterval(interval);
         
     }
 
@@ -179,7 +185,7 @@ function startTimer() {
     }, 1000);
 }
 
-function congrats () {
+/*function congrats () {
     if (matchedCard.length == 16) {
         clearInterval(interval);
         finalTime = timer.innerHTML;
@@ -208,7 +214,7 @@ function playAgain() {
     startGame();
 
 }
-
+*/
 for (let i=0; i <cards.length; i++) {
 card = cards[i];
 card.addEventListener('click', displayCard);
