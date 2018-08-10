@@ -120,6 +120,12 @@ function moveCounter() {
     moves++;
     counter.innerHTML = moves;
     //start timer on first click
+    if (moves == 1) {
+        sec = 0;
+        min = 0;
+        hr = 0
+        startTimer();
+    }
     
 
     // setting rating based on number of moves
@@ -142,32 +148,25 @@ function moveCounter() {
 }
 
 
-
-/*
-let second = 0; minute = 0; hour = 0;
-let timer = document.getElementsByClassName('timer');
+let sec = 0; min = 0; hr = 0;
+let timer = document.querySelector('.timer');
 var interval;
 function startTimer() {
     interval = setInterval(function() {
-        timer.innerHTML = minute+' mins ' +second +' secs';
-        second++;
-        if(second == 60) {
-            minute++;
-            second=0;
+        timer.innerHTML = min+' mins ' +sec +' secs';
+        sec++;
+        if(sec == 60) {
+            min++;
+            sec=0;
         }
-        if(minute==60) {
-            hour++;
-            minute = 0;
+        if(min==60) {
+            hr++;
+            min = 0;
         }
     }, 1000);
 }
 
-if(moves == 1) {
-        second = 0;
-        minute = 0;
-        hour = 0;
-        startTimer();
-    */ 
+
 
 for (let i=0; i <cards.length; i++) {
 card = cards[i];
