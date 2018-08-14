@@ -4,8 +4,6 @@ let cards = [...card];
 
 let deck = document.getElementById('card-deck');
 
-
-
 let openedCards = [];
 
 let moves = 0;
@@ -14,13 +12,15 @@ let counter = document.querySelector('.moves');
 
 let stars = document.getElementsByClassName('fa-star');
 
-let starList = document.getElementsByClassName('stars li');
+let starList = document.querySelectorAll('.stars li');
 
 let modal = document.getElementById('alert');
 
 let matchedCard = document.getElementsByClassName('match');
 
 let closeAlert = document.querySelector('.close');
+
+
 
 for (let i = 0; i < cards.length; i++) {
 
@@ -138,7 +138,7 @@ function enable() {
 function moveCounter() {
     moves++;
     counter.innerHTML = moves;
-    //start timer on first click
+    //start timer on first move
     if (moves == 1) {
         sec = 0;
         min = 0;
@@ -185,7 +185,7 @@ function startTimer() {
     }, 1000);
 }
 
-/*function congrats () {
+function congrats () {
     if (matchedCard.length == 16) {
         clearInterval(interval);
         finalTime = timer.innerHTML;
@@ -214,21 +214,10 @@ function playAgain() {
     startGame();
 
 }
-*/
+
 for (let i=0; i <cards.length; i++) {
 card = cards[i];
 card.addEventListener('click', displayCard);
 card.addEventListener('click', cardOpen);
+card.addEventListener('click', congrats);
 }
-
-
-
-
-    /* sec = 0;
-        min = 0;
-        hr = 0;
-        let timer = document.querySelector('.timer');
-        timer.innerHTML = '0 mins 0 secs';
-        clearInterval(interval);
-        */
-/* 'fa fa-diamond', 'fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-paper-plane-o', 'fa fa-anchor', 'fa fa-anchor', 'fa fa-bolt', 'fa fa-bolt', 'fa fa-cube', 'fa fa-cube', 'fa fa-leaf', 'fa fa-leaf', 'fa fa-bicycle', 'fa fa-bicycle', 'fa fa-bomb', 'fa fa-bomb' */
