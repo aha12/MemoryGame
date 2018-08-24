@@ -1,7 +1,6 @@
 Project Dependencies:
-- Jquery Library
 - Resource/tutorial at: https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
-
+- DOM selectors: https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors
 
 index.html changes:
 - added object type to each card.
