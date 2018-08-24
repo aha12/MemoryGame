@@ -2,7 +2,7 @@ let card = document.getElementsByClassName('card');
 
 let cards = [...card];
 
-let deck = document.getElementById('card-deck');
+const deck = document.getElementById('card-deck');
 
 let openedCards = [];
 
