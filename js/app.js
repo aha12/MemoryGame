@@ -21,13 +21,14 @@ let matchedCard = document.getElementsByClassName('match');
 let closeAlert = document.querySelector('.close');
 
 
-
+// calls displayCard function for each card
 for (let i = 0; i < cards.length; i++) {
 
     cards[i].addEventListener('click', displayCard);
 
 };
 
+//lets player click on cards and turn them over
 function displayCard () {
     this.classList.toggle('open');
     this.classList.toggle('show');
@@ -36,7 +37,7 @@ function displayCard () {
 
 
 
-
+//shuffles location of cards each time the page is reloaded
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
     
@@ -53,7 +54,7 @@ function shuffle(array) {
     document.body.onload = startGame();
 
     
-    
+    //resets the game
     function startGame(){
         
        let cardsShuffled = shuffle(cards);
@@ -85,7 +86,7 @@ function shuffle(array) {
         
     }
 
-
+// lets player turn over two cards at a time, and keeps track of matched and unmatched cards
 function cardOpen () {
     openedCards.push(this);
     let opened = openedCards.length;
@@ -99,7 +100,7 @@ function cardOpen () {
          
     }
 }
-
+//when cards are matched, function leaves them turned over
 function matched() {
     openedCards[0].classList.add('match');
     openedCards[1].classList.add('match');
@@ -108,6 +109,7 @@ function matched() {
     openedCards = [];
 }
 
+//when cards are unmatched, function flips them back over
 function unmatched() {
     openedCards[0].classList.add('unmatched');
     openedCards[1].classList.add('unmatched');
@@ -134,7 +136,7 @@ function enable() {
         }
     });
 }
-
+// counts number of moves; 2 clicks equal one move.
 function moveCounter() {
     moves++;
     counter.innerHTML = moves;
@@ -166,7 +168,7 @@ function moveCounter() {
     }
 }
 
-
+// timer specifications
 let sec = 0; min = 0; hr = 0;
 let timer = document.querySelector('.timer');
 var interval;
@@ -184,7 +186,7 @@ function startTimer() {
         }
     }, 1000);
 }
-
+// modal pops up when all cards are matched
 function congrats () {
     if (matchedCard.length == 16) {
         clearInterval(interval);
@@ -202,6 +204,7 @@ function congrats () {
     }
 }
 
+// closes the modal
 function closeModal () {
     closeAlert.addEventListener('click', function(e) {
         modal.classList.remove('show');
@@ -209,12 +212,15 @@ function closeModal () {
     })
 }
 
+// offers player option to play again
 function playAgain() {
     modal.classList.remove('show');
     startGame();
 
 }
 
+
+// loop uses event listeners to call necessary functions for each click.
 for (let i=0; i <cards.length; i++) {
 card = cards[i];
 card.addEventListener('click', displayCard);
