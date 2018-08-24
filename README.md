@@ -1,3 +1,8 @@
+Project Dependencies:
+- Jquery Library
+- Resource/tutorial at: https://scotch.io/tutorials/how-to-build-a-memory-matching-game-in-javascript
+
+
 index.html changes:
 - added object type to each card.
 - added the classes stars, deck, moves, timer, popup, close, overlay, message, content.
